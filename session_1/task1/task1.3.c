@@ -16,7 +16,19 @@
 
 int main(void) {
 
-	// complete your code here
+	char buff[100];
+    int num;
+	
+    printf("Enter number: ");
+    fgets(buff, 10, stdin);
+	int count = sscanf(buff, "%i", &num);
+
+	// Complete your code here
+	if (num%3==0 && num%5==0){  // todo
+		printf("The number is divisible by 3 and 5\n");
+	} else{
+		printf("The number is not divisible by both 3 and 5\n");
+	}
 
 	return 0;
 }

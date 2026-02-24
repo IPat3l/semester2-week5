@@ -23,13 +23,15 @@
  
 int main(void) {
 	
+	char in[100];
     int year;
 	
     printf("Enter year: ");
-    scanf("%d", &year);
-	
+    fgets(in, 10, stdin);
+	int count = sscanf(in, "%i", &year);
+
 	// Complete your code here
-	if (){  // todo
+	if ((year%4==0 && year%100!=0) || year%400==0){  // todo
 		printf("Leap Year\n");
 	} else{
 		printf("Not a Leap Year\n");

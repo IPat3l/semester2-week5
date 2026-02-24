@@ -22,16 +22,27 @@ int main(void) {
 	int is_premium;
 	int is_blacklisted;
 	
+    char buff[100];
+
 	printf("Enter order amount: ");
-    scanf("%f", &order_amount);
+    fgets(buff, 10, stdin);
+	int count = sscanf(buff, "%f", &order_amount);
 	
 	printf("Is customer a premium member? (1 = Yes, 0 = No): ");
-    scanf("%d", &is_premium);
+    fgets(buff, 10, stdin);
+	count = sscanf(buff, "%i", &is_premium);
 	
 	printf("Is customer blacklisted? (1 = Yes, 0 = No): ");
-    scanf("%d", &is_blacklisted);
+    fgets(buff, 10, stdin);
+	count = sscanf(buff, "%i", &is_blacklisted);
 	
-	// Complete the rest of the code
-
+	if ((order_amount > 100 || is_premium) && !is_blacklisted )
+    {
+        printf("Discount Applied\n");
+    }
+    else
+    {
+        printf("No Discount\n");
+    }
 	return 0;
 }
