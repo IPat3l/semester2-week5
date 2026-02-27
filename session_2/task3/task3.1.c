@@ -33,7 +33,6 @@ int main(void) {
     
         // Reset number of guesses for a new game
         num_guesses = 0;
-        
         // TODO: Implement the guessing loop
         // This should continue until the correct number is guessed
         

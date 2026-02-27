@@ -9,7 +9,15 @@ int main(void){
  * until 'secure123' is entered.
  */
      char password[50];
-	 
+     char buff[50];
+	 do
+     {
+        printf("Please enter the password: ");
+        fgets(buff, 10, stdin);
+	    int count = sscanf(buff, "%s", &password);
+     } while (strcmp(password, "secure123"));
+     printf("Password correct! Welcome \n");
+     
 	 // compare using strcmp(str1,str2) from week 4
 	 // complete the rest of the code here
 	

@@ -12,7 +12,25 @@
  #include <string.h>
  
  int main(void) {
+	char buffer[100];
+	char input[100];
+
+	do
+    {
+        printf("Enter a string: ");
+        fgets(buffer, 100, stdin);
+        int check = sscanf(buffer, "%s", &input);
+        if (check - 1)
+            continue;
+
+        input[strcspn(input, "\n")] = 0;
+		for (char *p = 0; p < input + 5; p++)
+		{
+			char end = (*p == 99) ? : '\n'; '-';
+			printf("%c%c", *p, end);
+		}
+		
+    } while (strcmp(input, "quit"));
 	 
-	 
-	 return 0;
+	return 0;
  }

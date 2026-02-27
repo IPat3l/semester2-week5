@@ -13,7 +13,14 @@ int main(void){
  *         break
  */
 	char choice;
-	// complete the rest of the code here
+	char in[50];
+	do
+	{
+		printf("Enter 'q' to quit: ");
+		fgets(in, 10, stdin);
+		sscanf(in, "%c", &choice);
+	} while (choice != 'q');
+	
 	
     return 0;
 }

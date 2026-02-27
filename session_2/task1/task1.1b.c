@@ -18,6 +18,15 @@ int main(void){
 	int count = 0;   // actual number of results
 	
 	//todo: convert the list comprehension
+	for (int i = 0; i < 10; i++)
+	{	
+		int num = numbers[i];
+		if (num % 2 == 0)
+		{
+			squares[count] = num*num;
+			count++;
+		}
+	}
 	
 	//print results
 	for(int i=0; i < count; i++){

@@ -14,15 +14,30 @@ int main(void) {
     float temperature;
     char scale;
     int valid_input = 0;
-    float converted_temp;
-    
+    float converted_temp;   
+    char buffer[50];
+    int valid = 1;
+
     printf("=== Temperature Converter ===\n");
     
     // TODO: Keep asking until valid input is provided
     // Use an appropriate loop structure
-    
+    do
+    {
         printf("Enter temperature with scale (e.g., 23.5C or 75F): ");
-        
+        fgets(buffer, 50, stdin);
+        int check = sscanf(buffer, "%f%c", &temperature, &scale);
+        if (check - 2)
+            continue;
+
+        scale = toupper(scale);
+        switch (scale)
+        {
+        case 'C': converted_temp = temperature * 9/5 + 32 ; printf("%.1f°C is equal to %.1f°F\n", temperature, converted_temp); valid = 0; break;
+        case 'F': converted_temp = temperature - 32 * 5/9 ; printf("%.1f°F is equal to %.1f°C\n", temperature, converted_temp); valid = 0; break;
+        default: printf("Incorrect Scale, Try Again\n");
+        }
+    } while (valid);        
         // TODO: Use fgets to read the input
         
         // TODO: Remove the newline character from input
