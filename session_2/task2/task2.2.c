@@ -19,7 +19,7 @@
     {
         printf("Enter a string: ");
         fgets(buffer, 100, stdin);
-        int check = sscanf(buffer, "%s", &input);
+        check = sscanf(buffer, "%s", &input); int
         if (check - 1)
             continue;
 
